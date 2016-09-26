@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  
+  roles:
+   - install_java
+   - install_maven
+   - install_tomcat
+   - update_bash_profile
+   - bootstrap

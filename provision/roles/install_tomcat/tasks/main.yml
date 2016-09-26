@@ -1,0 +1,5 @@
+---
+- name: "extract tomcat installer"
+  shell: tar -xvf /vagrant/modules/tomcat/files/apache-tomcat-8.0.32.tar.gz -C /opt
+  become: true
+  become_method: sudo

@@ -1,0 +1,19 @@
+---
+- name: "Downloading java binaries. Wait for couple of minutes"
+  shell: 'wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz"'
+- name: "extract jdk8 installer"
+  shell: tar -xvf /home/vagrant/jdk-8u101-linux-x64.tar.gz -C /opt
+  become: true
+  become_method: sudo
+- name: "set java alternatives"
+  shell: alternatives --install /usr/bin/java java /opt/jdk1.8.0_101/bin/java 2 && alternatives --set java /opt/jdk1.8.0_101/bin/java
+  become: true
+  become_method: sudo
+- name: "set jar alternatives"
+  shell: alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_101/bin/jar 2 && alternatives --set jar /opt/jdk1.8.0_101/bin/jar
+  become: true
+  become_method: sudo
+- name: "set javac alternatives"
+  shell: alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_101/bin/javac 2 && alternatives --set javac /opt/jdk1.8.0_101/bin/javac
+  become: true
+  become_method: sudo

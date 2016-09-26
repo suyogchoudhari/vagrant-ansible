@@ -1,0 +1,5 @@
+---
+- name: "extract maven installer"
+  shell: tar -xvf /vagrant/modules/maven/files/apache-maven-3.2.1-bin.tar.gz -C /opt
+  become: true
+  become_method: sudo

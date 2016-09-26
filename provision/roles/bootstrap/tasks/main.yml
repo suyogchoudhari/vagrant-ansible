@@ -1,0 +1,5 @@
+---
+- name: "start bootstrap script"
+  shell: sh /vagrant/modules/bootstrap/files/bootstrap.sh
+  become: true
+  become_method: sudo

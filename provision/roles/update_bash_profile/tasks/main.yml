@@ -1,0 +1,5 @@
+---
+- name: "copy bash_profile"
+  shell: cp /vagrant/modules/bash_profile/files/.bash_profile /home/vagrant
+  become: true
+  become_method: sudo
